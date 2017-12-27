@@ -1,0 +1,6 @@
+framework module AppDevKit {
+  umbrella header "AppDevKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
