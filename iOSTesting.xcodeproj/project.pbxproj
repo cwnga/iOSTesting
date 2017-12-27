@@ -18,6 +18,7 @@
 		F78D36ED1FF3951100CE3FB3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78D36EA1FF3951100CE3FB3 /* MainViewController.m */; };
 		F78D36EF1FF397EB00CE3FB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78D36EE1FF397EB00CE3FB3 /* AVFoundation.framework */; };
 		F78D36F11FF397F200CE3FB3 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78D36F01FF397F200CE3FB3 /* AVKit.framework */; };
+		F78D36F51FF3986400CE3FB3 /* EAImage360Library.m in Sources */ = {isa = PBXBuildFile; fileRef = F78D36F41FF3986400CE3FB3 /* EAImage360Library.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		F78D36EB1FF3951100CE3FB3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		F78D36EE1FF397EB00CE3FB3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F78D36F01FF397F200CE3FB3 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		F78D36F31FF3986400CE3FB3 /* EAImage360Library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAImage360Library.h; sourceTree = "<group>"; };
+		F78D36F41FF3986400CE3FB3 /* EAImage360Library.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAImage360Library.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +98,7 @@
 		F78D36CB1FF3924E00CE3FB3 /* iOSTesting */ = {
 			isa = PBXGroup;
 			children = (
+				F78D36F21FF3986400CE3FB3 /* Utilities */,
 				F78D36E71FF3951100CE3FB3 /* UILayer */,
 				F78D36CC1FF3924E00CE3FB3 /* AppDelegate.h */,
 				F78D36CD1FF3924E00CE3FB3 /* AppDelegate.m */,
@@ -125,6 +129,15 @@
 				F78D36EB1FF3951100CE3FB3 /* MainViewController.h */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F78D36F21FF3986400CE3FB3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F78D36F31FF3986400CE3FB3 /* EAImage360Library.h */,
+				F78D36F41FF3986400CE3FB3 /* EAImage360Library.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +271,7 @@
 			files = (
 				F78D36D11FF3924E00CE3FB3 /* ViewController.m in Sources */,
 				F78D36DC1FF3924E00CE3FB3 /* main.m in Sources */,
+				F78D36F51FF3986400CE3FB3 /* EAImage360Library.m in Sources */,
 				F78D36CE1FF3924E00CE3FB3 /* AppDelegate.m in Sources */,
 				F78D36ED1FF3951100CE3FB3 /* MainViewController.m in Sources */,
 			);
