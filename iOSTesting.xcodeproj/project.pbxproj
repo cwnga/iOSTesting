@@ -16,6 +16,8 @@
 		F78D36DC1FF3924E00CE3FB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F78D36DB1FF3924E00CE3FB3 /* main.m */; };
 		F78D36EC1FF3951100CE3FB3 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78D36E91FF3951100CE3FB3 /* MainViewController.xib */; };
 		F78D36ED1FF3951100CE3FB3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78D36EA1FF3951100CE3FB3 /* MainViewController.m */; };
+		F78D36EF1FF397EB00CE3FB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78D36EE1FF397EB00CE3FB3 /* AVFoundation.framework */; };
+		F78D36F11FF397F200CE3FB3 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78D36F01FF397F200CE3FB3 /* AVKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		F78D36E91FF3951100CE3FB3 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		F78D36EA1FF3951100CE3FB3 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		F78D36EB1FF3951100CE3FB3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		F78D36EE1FF397EB00CE3FB3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F78D36F01FF397F200CE3FB3 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F78D36F11FF397F200CE3FB3 /* AVKit.framework in Frameworks */,
+				F78D36EF1FF397EB00CE3FB3 /* AVFoundation.framework in Frameworks */,
 				4E3AE83AFC0541ED380C4ED9 /* Pods_iOSTesting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,6 +58,8 @@
 		37CDF36E4A08D2F0503F80A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F78D36F01FF397F200CE3FB3 /* AVKit.framework */,
+				F78D36EE1FF397EB00CE3FB3 /* AVFoundation.framework */,
 				14085337A31D67EE550CBDD3 /* Pods_iOSTesting.framework */,
 			);
 			name = Frameworks;
