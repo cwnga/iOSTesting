@@ -35,7 +35,9 @@
     if ([ADKCamera cameraPermission] && [ADKCamera microphonePermission]) {
         self.camera = [[ADKCamera alloc] initCamcoderWithDelegate:self quality:AVCaptureSessionPresetHigh position:ADKCameraPositionRear];
         self.camera.delegate = self;
-
+        if ([self.delegate respondsToSelector:@selector(didInitCameraOfImage360Library:)]) {
+            [self.delegate didInitCameraOfImage360Library:self];
+        }
     } else {
         __weak typeof(self) weakSelf = self;
         if ([AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo] == AVAuthorizationStatusNotDetermined) {
@@ -103,7 +105,7 @@
                                    if ([weakSelf.delegate respondsToSelector:@selector(didGenerateImagesByImage360Library:images:)]) {
                                        [weakSelf.delegate didGenerateImagesByImage360Library:weakSelf images:images];
                                    }
-                      }];
+                               }];
         }
     } outputURL:self.videoURL];
 }
@@ -145,25 +147,19 @@
     if (!complete) {
         return;
     }
-    AVAssetImageGenerator *imageGenerator = [AVAssetImageGenerator assetImageGeneratorWithAsset:avasset];
-    CGSize size = [[[avasset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] naturalSize];
-    CGSize aspectFillSize = CGSizeZero;
-    if (size.width / size.height >= preferSize.width / preferSize.height) {
-        aspectFillSize = CGSizeMake(size.width * (preferSize.height / size.height),
-                                    preferSize.height);
-    } else {
-        aspectFillSize = CGSizeMake(preferSize.width,
-                                    size.height * (preferSize.width / size.width));
-    }
 
-    imageGenerator.maximumSize = aspectFillSize;
+    AVAssetImageGenerator *imageGenerator = [AVAssetImageGenerator assetImageGeneratorWithAsset:avasset];
+    imageGenerator.maximumSize = CGSizeZero;
     fps = (fps <= 0) ? 1 : fps;
     CGFloat segmentSec = 1 / fps;
     NSInteger count = round(CMTimeGetSeconds(avasset.duration) * fps);
     NSMutableArray *timesArray = [NSMutableArray array];
     for (NSInteger i = 0; i < count; i++) {
         CMTime cmTime = CMTimeMakeWithSeconds(((i * segmentSec)), fps);
-        [timesArray addObject:[NSValue valueWithCMTime:cmTime]];
+        NSValue *tmpValue = [NSValue valueWithCMTime:cmTime];
+        if (tmpValue) {
+            [timesArray addObject:tmpValue];
+        }
     }
     __block NSInteger leaveCount = count;
     NSMutableArray <UIImage *> *images = [NSMutableArray array];
@@ -182,19 +178,37 @@
                                              CGImageRetain(cgImageRef);
                                              if (result == AVAssetImageGeneratorSucceeded) {
                                                  UIImage *image = [UIImage imageWithCGImage:cgImageRef];
-                                                 [images addObject:image];
+                                                 if (image) {
+                                                     [images addObject:image];
+                                                 }
                                              }
                                              if (error && errorBlock) {
                                                  errorBlock(error);
                                              }
                                              CGImageRelease(cgImageRef);
                                              if (leaveCount == 0) {
+
+                                                 CGSize aspectFillSize = CGSizeZero;
+                                                 if ([images firstObject].size.width / [images firstObject].size.height >= preferSize.width / preferSize.height) {
+
+                                                     aspectFillSize = CGSizeMake(images.firstObject.size.width * (preferSize.height / images.firstObject.size.height),
+                                                                                 preferSize.height);
+
+                                                 } else {
+                                                     aspectFillSize = CGSizeMake(preferSize.width,
+                                                                                 images.firstObject.size.height * (preferSize.width / images.firstObject.size.width));
+
+                                                 }
+
                                                  NSMutableArray *newSizeImages = [NSMutableArray array];
                                                  for (UIImage *image in images) {
-                                                     [newSizeImages addObject:[image ADKCropRect:CGRectMake((aspectFillSize.width - preferSize.width) / 2,
-                                                                                                            (aspectFillSize.height - preferSize.height) / 2,
-                                                                                                            preferSize.width,
-                                                                                                            preferSize.height)]];
+                                                     UIImage *newSizeImage = [[image ADKScaleToSize:aspectFillSize] ADKCropRect:CGRectMake((aspectFillSize.width - preferSize.width) / 2,
+                                                                                                                                            (aspectFillSize.height - preferSize.height) / 2,
+                                                                                                                                            preferSize.width,
+                                                                                                                                            preferSize.height)];
+                                                     if (newSizeImage) {
+                                                         [newSizeImages addObject:newSizeImage];
+                                                     }
                                                  }
                                                  complete([newSizeImages copy]);
                                              }
@@ -265,7 +279,7 @@
     }
 
     int numberOfImagesPerLine = ceil(sqrt(images.count));
-    UIImage *tmpImg = (UIImage *)images[0];
+    UIImage *tmpImg = images[0];
     int bigImgWidth = tmpImg.size.width * numberOfImagesPerLine;
     int bigImgHeight = tmpImg.size.height * numberOfImagesPerLine;
 
@@ -299,7 +313,10 @@
         CGFloat smallImageLeft = (int)(i % numberOfSmallImagesInRow) * smallImageWidth;
         CGRect popImgFrame = CGRectMake(smallImageLeft, smallImageTop, smallImageWidth, smallImageHeight);
         CGImageRef popCGImage = CGImageCreateWithImageInRect(image.CGImage, popImgFrame);
-        [images addObject: [UIImage imageWithCGImage:popCGImage]];
+        UIImage *tmpImage = [UIImage imageWithCGImage:popCGImage];
+        if (tmpImage) {
+            [images addObject:tmpImage];
+        }
         CGImageRelease(popCGImage);
     }
     return [images copy];

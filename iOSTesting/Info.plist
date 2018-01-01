@@ -24,6 +24,8 @@
 	<string>request camera</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>request mic</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>test</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

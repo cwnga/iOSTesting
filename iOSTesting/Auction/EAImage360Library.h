@@ -22,6 +22,7 @@ typedef NS_ENUM (NSUInteger, EAImage360LibraryErrorCode) {
 
 @optional
 
+- (void)didInitCameraOfImage360Library:(EAImage360Library *)library;
 - (void)image360Library:(EAImage360Library *)library error:(NSError *)error;
 - (void)willGenerateImagesByImage360Library:(EAImage360Library *)eaImage360Library;
 - (void)didGenerateImagesByImage360Library:(EAImage360Library *)eaImage360Library images:(NSArray <UIImage *> *)images;

@@ -18,7 +18,13 @@
 		F78D36ED1FF3951100CE3FB3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78D36EA1FF3951100CE3FB3 /* MainViewController.m */; };
 		F78D36EF1FF397EB00CE3FB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78D36EE1FF397EB00CE3FB3 /* AVFoundation.framework */; };
 		F78D36F11FF397F200CE3FB3 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F78D36F01FF397F200CE3FB3 /* AVKit.framework */; };
-		F78D36F51FF3986400CE3FB3 /* EAImage360Library.m in Sources */ = {isa = PBXBuildFile; fileRef = F78D36F41FF3986400CE3FB3 /* EAImage360Library.m */; };
+		F78D36F91FF49C8800CE3FB3 /* EACollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F78D36F71FF49C8800CE3FB3 /* EACollectionViewCell.m */; };
+		F78D36FA1FF49C8800CE3FB3 /* EACollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78D36F81FF49C8800CE3FB3 /* EACollectionViewCell.xib */; };
+		F78D36FE1FF4D9BF00CE3FB3 /* EAImage360Library.m in Sources */ = {isa = PBXBuildFile; fileRef = F78D36FD1FF4D9BE00CE3FB3 /* EAImage360Library.m */; };
+		F78D37061FF4DA8800CE3FB3 /* EACollectionViewGalleryImage360Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78D37001FF4DA8700CE3FB3 /* EACollectionViewGalleryImage360Cell.xib */; };
+		F78D37071FF4DA8800CE3FB3 /* EASKImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F78D37011FF4DA8700CE3FB3 /* EASKImageView.m */; };
+		F78D37081FF4DA8800CE3FB3 /* EACollectionViewGalleryImage360Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = F78D37021FF4DA8800CE3FB3 /* EACollectionViewGalleryImage360Cell.m */; };
+		F78D37091FF4DA8800CE3FB3 /* EAMotionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F78D37041FF4DA8800CE3FB3 /* EAMotionManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +46,18 @@
 		F78D36EB1FF3951100CE3FB3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		F78D36EE1FF397EB00CE3FB3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F78D36F01FF397F200CE3FB3 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
-		F78D36F31FF3986400CE3FB3 /* EAImage360Library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAImage360Library.h; sourceTree = "<group>"; };
-		F78D36F41FF3986400CE3FB3 /* EAImage360Library.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAImage360Library.m; sourceTree = "<group>"; };
+		F78D36F61FF49C8800CE3FB3 /* EACollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EACollectionViewCell.h; sourceTree = "<group>"; };
+		F78D36F71FF49C8800CE3FB3 /* EACollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EACollectionViewCell.m; sourceTree = "<group>"; };
+		F78D36F81FF49C8800CE3FB3 /* EACollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EACollectionViewCell.xib; sourceTree = "<group>"; };
+		F78D36FC1FF4D9BE00CE3FB3 /* EAImage360Library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAImage360Library.h; sourceTree = "<group>"; };
+		F78D36FD1FF4D9BE00CE3FB3 /* EAImage360Library.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAImage360Library.m; sourceTree = "<group>"; };
+		F78D36FF1FF4DA8700CE3FB3 /* EACollectionViewGalleryImage360Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EACollectionViewGalleryImage360Cell.h; sourceTree = "<group>"; };
+		F78D37001FF4DA8700CE3FB3 /* EACollectionViewGalleryImage360Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EACollectionViewGalleryImage360Cell.xib; sourceTree = "<group>"; };
+		F78D37011FF4DA8700CE3FB3 /* EASKImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EASKImageView.m; sourceTree = "<group>"; };
+		F78D37021FF4DA8800CE3FB3 /* EACollectionViewGalleryImage360Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EACollectionViewGalleryImage360Cell.m; sourceTree = "<group>"; };
+		F78D37031FF4DA8800CE3FB3 /* EAMotionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAMotionManager.h; sourceTree = "<group>"; };
+		F78D37041FF4DA8800CE3FB3 /* EAMotionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAMotionManager.m; sourceTree = "<group>"; };
+		F78D37051FF4DA8800CE3FB3 /* EASKImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EASKImageView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +114,7 @@
 		F78D36CB1FF3924E00CE3FB3 /* iOSTesting */ = {
 			isa = PBXGroup;
 			children = (
-				F78D36F21FF3986400CE3FB3 /* Utilities */,
+				F78D36FB1FF4D9BE00CE3FB3 /* Auction */,
 				F78D36E71FF3951100CE3FB3 /* UILayer */,
 				F78D36CC1FF3924E00CE3FB3 /* AppDelegate.h */,
 				F78D36CD1FF3924E00CE3FB3 /* AppDelegate.m */,
@@ -117,6 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				F78D36E81FF3951100CE3FB3 /* ViewControllers */,
+				F78D36F61FF49C8800CE3FB3 /* EACollectionViewCell.h */,
+				F78D36F71FF49C8800CE3FB3 /* EACollectionViewCell.m */,
+				F78D36F81FF49C8800CE3FB3 /* EACollectionViewCell.xib */,
 			);
 			path = UILayer;
 			sourceTree = "<group>";
@@ -131,13 +150,20 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		F78D36F21FF3986400CE3FB3 /* Utilities */ = {
+		F78D36FB1FF4D9BE00CE3FB3 /* Auction */ = {
 			isa = PBXGroup;
 			children = (
-				F78D36F31FF3986400CE3FB3 /* EAImage360Library.h */,
-				F78D36F41FF3986400CE3FB3 /* EAImage360Library.m */,
+				F78D36FF1FF4DA8700CE3FB3 /* EACollectionViewGalleryImage360Cell.h */,
+				F78D37021FF4DA8800CE3FB3 /* EACollectionViewGalleryImage360Cell.m */,
+				F78D37001FF4DA8700CE3FB3 /* EACollectionViewGalleryImage360Cell.xib */,
+				F78D37031FF4DA8800CE3FB3 /* EAMotionManager.h */,
+				F78D37041FF4DA8800CE3FB3 /* EAMotionManager.m */,
+				F78D37051FF4DA8800CE3FB3 /* EASKImageView.h */,
+				F78D37011FF4DA8700CE3FB3 /* EASKImageView.m */,
+				F78D36FC1FF4D9BE00CE3FB3 /* EAImage360Library.h */,
+				F78D36FD1FF4D9BE00CE3FB3 /* EAImage360Library.m */,
 			);
-			path = Utilities;
+			path = Auction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,8 +227,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F78D36FA1FF49C8800CE3FB3 /* EACollectionViewCell.xib in Resources */,
 				F78D36D91FF3924E00CE3FB3 /* LaunchScreen.storyboard in Resources */,
 				F78D36D61FF3924E00CE3FB3 /* Assets.xcassets in Resources */,
+				F78D37061FF4DA8800CE3FB3 /* EACollectionViewGalleryImage360Cell.xib in Resources */,
 				F78D36D41FF3924E00CE3FB3 /* Main.storyboard in Resources */,
 				F78D36EC1FF3951100CE3FB3 /* MainViewController.xib in Resources */,
 			);
@@ -270,8 +298,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F78D36D11FF3924E00CE3FB3 /* ViewController.m in Sources */,
+				F78D37081FF4DA8800CE3FB3 /* EACollectionViewGalleryImage360Cell.m in Sources */,
+				F78D37091FF4DA8800CE3FB3 /* EAMotionManager.m in Sources */,
 				F78D36DC1FF3924E00CE3FB3 /* main.m in Sources */,
-				F78D36F51FF3986400CE3FB3 /* EAImage360Library.m in Sources */,
+				F78D36F91FF49C8800CE3FB3 /* EACollectionViewCell.m in Sources */,
+				F78D37071FF4DA8800CE3FB3 /* EASKImageView.m in Sources */,
+				F78D36FE1FF4D9BF00CE3FB3 /* EAImage360Library.m in Sources */,
 				F78D36CE1FF3924E00CE3FB3 /* AppDelegate.m in Sources */,
 				F78D36ED1FF3951100CE3FB3 /* MainViewController.m in Sources */,
 			);
